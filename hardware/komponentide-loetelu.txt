@@ -1,0 +1,39 @@
+Juhtseadmed
+
+Kütusepaneel
+1 × liugpotentsiomeeter (kütuse sügavus / Fuel Depth)
+1 × liugpotentsiomeeter (kütuse peenhäälestus / Fuel Tune)
+
+Juhtvardapaneel
+1 × liugpotentsiomeeter (peamine juhtvarda sügavus)
+1 × pöördpotentsiomeeter (peenjuhtimine)
+
+Pumpade paneel
+2 × pöördpotentsiomeeter (Pump 1 ja Pump 2 kiirus)
+3 × liuglüliti (pealüliti, Pump 1 sisse/välja, Pump 2 sisse/välja)
+
+Turbiini paneel
+1 × liuglüliti (turbiin sisse/välja)
+
+Hädaseiskamine
+1 × surunupp (SCRAM / hädaseiskamine)
+
+Indikaatorid
+
+Hoiatuspaneel
+1 × punane LED – kriitiline alarm
+1 × punane LED – temperatuurihäire
+1 × punane LED – reaktiivsuse häire
+1 × oranž LED – madal veetase
+
+Olekutulukesed
+1 × roheline LED – reaktor aktiivne
+1 × roheline LED – turbiin töötab
+3 × rohelist LED-i – pumpade ja pealüliti olek
+
+Heli ja väljund
+1 × piesosummer (piezo buzzer)
+1 × releemoodul (või relee draiveriga)
+
+Passiivkomponendid
+7 × 1 kΩ takisti (LED-ide voolupiiranguks)
