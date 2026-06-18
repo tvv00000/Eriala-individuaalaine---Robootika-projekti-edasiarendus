@@ -6,3 +6,5 @@ MDTJF 2000 on interaktiivne tuumareaktori simulaator. Projekt kasutab füüsilis
 - `docs/` – juhendid ja tehniline info
 - `hardware/` – elektroonika ja skeemid
 - `media/` – demonstratsioonid
+
+[demovideo](https://drive.google.com/file/d/1ct23M7h8ehWZ-KBIECmZKTh7m00w4W7L/view?usp=drive_link)
