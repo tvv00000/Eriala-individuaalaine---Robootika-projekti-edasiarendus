@@ -1,5 +1,4 @@
 #include <TM1637TinyDisplay.h>
-#include <ezBuzzer.h>
 //Pins------------
 //fuel rods
 #define FUEL1_POT A1
@@ -91,10 +90,6 @@ TM1637TinyDisplay ReactivityDisplay = TM1637TinyDisplay(DISPLAY_CLOCK, DISPLAY_R
 TM1637TinyDisplay PowerDisplay = TM1637TinyDisplay(DISPLAY_CLOCK, DISPLAY_POWER);
 TM1637TinyDisplay WaterLevelDisplay = TM1637TinyDisplay(DISPLAY_CLOCK, DISPLAY_WATER);
 
-
-//and the buzza
-ezBuzzer alarm(WARNING_PIZO);
-
 //Toore inputi printout:
 bool raw_print = 0; //muuta 1ks kui vaja näha raw printe serialis.
 
@@ -130,7 +125,6 @@ void setup() {
 
 void loop() {
 
-    alarm.loop();
 
     unsigned long currentTime = millis();
     if(currentTime-lastUpdateTime >= TICKRATE){ //checks if its time to update
@@ -144,8 +138,9 @@ void loop() {
 
         //restart funktsioon:
         if (core_temp > 900 || water_temp > 210){
-            alarm.beep(1000);
+            tone(WARNING_PIZO, 3000);
             delay(1000);
+            noTone(WARNING_PIZO);
             TempDisplay.showString("----");
             ReactivityDisplay.showString("----");
             WaterLevelDisplay.showString("----");
@@ -181,9 +176,10 @@ void readInputs(){
         pump1_speed = 110;
         pump2_speed = 110;
 
-        alarm.beep(200);
+        tone(WARNING_PIZO, 1000);
 
     } else {
+        noTone(WARNING_PIZO);
         turbine_enabled = (digitalRead(TURPIN) == LOW);
 
         int control1_raw = analogRead(CONTROL_ROD_POT1);
@@ -406,22 +402,35 @@ void printStatus() {
     digitalWrite(WARNING_CRIT, warning_crit ? HIGH : LOW);
 }//endprintstatus
 
-void alarmSound(){
-    bool alarmActive = 0;
-    bool anyWarning =
-    warning_water ||
-    warning_temp ||
-    warning_reactivity ||
-    warning_crit;
+void alarmSound() {
+    static bool beepState = false;
+    static unsigned long lastToggle = 0;
 
-    if (anyWarning && !alarmActive) {
-        alarm.beep(15000);
-        alarmActive = true;
+    bool anyWarning =
+        warning_water ||
+        warning_temp ||
+        warning_reactivity ||
+        warning_crit;
+
+    // Don't interfere with A35 alarm
+    if (digitalRead(A35) == LOW) {
+        return;
     }
 
-    if (!anyWarning && alarmActive) {
-        alarm.stop();
-        alarmActive = false;
+    if (anyWarning) {
+        if (millis() - lastToggle > 500) { // 0.5s on/off
+            lastToggle = millis();
+            beepState = !beepState;
+
+            if (beepState) {
+                tone(WARNING_PIZO, 2000);
+            } else {
+                noTone(WARNING_PIZO);
+            }
+        }
+    } else {
+        noTone(WARNING_PIZO);
+        beepState = false;
     }
 }
 
