@@ -1,0 +1,55 @@
+Mida printida ja miks:
+----1x------
+control rod paneel
+fuel control    --kütuse paneel
+nameplate       --dekoreeriv nimeplaat(kõige tähtsam!!)
+pump paneel
+box lid         --panipaiga kaan
+STORAGE BOX     --panipaiga kere
+STORAGE BOX top -- panipaiga ülemine osa
+turbine panel
+warnings        --hoiatus paneel
+//lisatud ka .par failid paneelidele, kus soovitan solidedges muuta LCD kinnituskohtade poldiaugud väiksemaks, et lcd kruvid hoiaks ka lcd korralikult kinni. Alternatiivselt võib panna ka liimipüssiga.
+
+
+----3x-----
+pote dial           --skaala keeratavate potede ümber
+slide pote cover    --slide pote ülemine kaunistus
+slide pote bottom   --slide pote kinnitus
+https://www.thingiverse.com/thing:2563351 --pote nupud.
+
+---vastavalt vajadusele
+panel support 33mm  --kohvri ülemise osa tugijalad/kinnituskronsad paneelidele
+panel support 50mm  --kohvri alumise osa tugijalad/kinnituskronsad paneelidele
+lable coverXX       --paneelidel olevate siltide katted. Mõõta ja printida vajalik kogus.
+washer              --seib mis leevendab survet paneelide taustaks oleva vahtkomposiit plaadile. Läheb      poltidele mis hoiavad panel supportidest kinni.
+mounting bracket    -- kinnitab paneelid tagaplaadi külge. Eeldab komposiit plaadi paksusega aluspaneeli.
+LCD_MOUNT           --kui mingil põhjusel on vaja lcdsid paremini kinnitada.
+
+
+###korpuse riistvara ja ehitamine####
+
+Vaja läheb:
+-Alumiinium tööriistakohver (38x26x12) või ükskõik mis muu kohvrit(sel juhul tuleb kinnitused ise mõelda)
+-Komposiit vahtplaati või ükskõik mis muud materjali mis oleks piisavalt jäik paneelide taustaplaadiks
+-panel supporte niipalju kui heaks arvate
+-M3x20 polte ja washereid (või päris seibe) vastavalt vajadusele
+-1x printimise nimekirjast kõik jupid.
+
+----ehitus---
+Lõigata aluspaneel mõõtu ning leida paneelidele ja panipaigale oma koht.
+Seejärel lõigata augud paneelide jaoks sisse.
+kinnitada paneelid mounting bracketeid kasutades aluspaneeli külge. Vajadusel puurida nurkadesse uued 3.5mm augud paremaks kinnituseks.
+Pärast potede kinnitamist saab liimida külge pote dial paneelid paneelide külge.
+
+Panipaiga STORAGE BOX top käib aluspaneeli külge superliimiga või kahepoolse teibiga.
+
+Seejärel saab lõigata ülejäänud materjalist toestavad tükid, mis saab liimida või kahepoolse teibiga kinnitada kohvri seinte külge. Nende eesmärk on toestada aluspaneeli ääri.
+panel support XXmm toestab paneele keskelt. Altpoolt kinnitub ta kohvri külge poltidega, mille jaoks tuleb läbi kohvri auk puurida ning pealtpoolt aluspaneeli külge, mille jaoks on ka vaja auk puurida.
+STORAGE BOX käib STORAGE BOX topi läbiulatuva ääre ümber ning all on auk, kuhu saab sisse keerata poldi läbi kohvri.
+
+Lõpuks tuleb aluspaneelile kohvri hingepoolsemasse serva lõigata ka vastav vahe, kust mööda juhtmeid saab vedada.
+
+Kesta ehitus peaks nüüd ühel pool olema. Edasi on skeemi järgi komponentide lisamine ja jootmine.
+
+
